@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Form</title>
+    <style>
+        img{
+            width:100px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .sizeofpizza{
+            border: 1px solid rgb(46, 46, 165);
+            border-radius: 5px;
+            margin:40px;
+            padding: 10px;
+        }
+        fieldset{
+            margin:40px;
+            padding: 10px;
+            border-radius: 5px;
+            border:1px solid rgb(46, 46, 165);
+        }
+         h1{
+             font-size: 60px;
+         }
+         #Address{
+            margin:40px;
+            padding: 10px;
+            
+         }
+         #OrderSummary{
+            width: 50vw;
+            margin-left: 25vw;
+            padding: 10px;
+            border-radius: 10px;
+            border-color: green;
+            border-style: solid;
+            border-width: thick;
+            background-color: #ffffff;
+           }
+           #City option{
+            width:200px;
+           }
+           button{
+               margin-left:40px;
+           }
+           
+    </style>
+    <script src="javascript.js" type="text/javascript"></script>
+</head>
+<body  style="background-color: #01dddd;">
+    <h1 style="text-align:center;"><Strong>Pizza Order Form</Strong></h1>
+    <form  >
+        <div id="page1" style="display:block;">
+        <div class="sizeofpizza">
+            <label for="size">Size:</label>
+            <input  type="range"  id="size" name="size" min="1" max="4" value="1" onchange="ChangePizzaSize()"/>
+            <label id="pizzasize" for="size">Small 6$</label>
+            <img id="image" src="https://i.ibb.co/Kjj3jPt/pizza-clipart.png" alt="pizza">
+            
+          </div>
+          <fieldset>
+            <legend >Meat Topping (+2$ for each) </legend>
+            <input class="messageCheckbox" type="checkbox" id="Pepperoni" name="pl" value="Pepperoni">
+            <label for="Pepperoni"> Pepperoni</label><br>
+            <input class="messageCheckbox" type="checkbox" id="Sausage" name="pl" value="Sausage">
+            <label for="Sausage"> Sausage</label><br>
+            <input class="messageCheckbox" type="checkbox" id="Ground Beef" name="pl" value="Ground Beef">
+            <label for="Ground Beef"> Ground Beef</label><br>
+            <input class="messageCheckbox" type="checkbox" id="Anchovy" name="pl" value="Anchovy">
+            <label for="Anchovy"> Anchovy</label><br>
+            <input class="messageCheckbox" type="checkbox" id="Chicken" name="pl" value="Chicken">
+            <label for="Chicken"> Chicken</label><br>
+        </fieldset>
+        <fieldset >
+            <legend> Veggies (+1$ for each) </legend>
+            <input type="checkbox" id="Tomatoes" name="p2" value="Tomatoes">
+            <label for="Tomatoes"> Tomatoes</label><br>
+            <input type="checkbox" id="Onions" name="p2" value="Onions">
+            <label for="Onions"> Onions</label><br>
+            <input type="checkbox" id="Olives" name="p2" value="Olives">
+            <label for="Olives"> Olives</label><br>
+            <input type="checkbox" id="Mushrooms" name="p2" value="Mushrooms">
+            <label for="Mushrooms"> Mushrooms</label><br>
+            <input type="checkbox" id="Pineapple" name="p2" value="Pineapple">
+            <label for="Pineapple"> Pineapple</label><br>
+            <input type="checkbox" id="Spinach" name="p2" value="Spinach">
+            <label for="Spinach"> Spinach</label><br>
+            <input type="checkbox" id="Jalapeno" name="p2" value="Jalapeno">
+            <label for="Jalapeno"> Jalapeno</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Cheese</legend>
+            <input type="radio" id="Regular Cheese" name="Cheese" value="Regular Cheese">
+            <label for="Regular Cheese">Regular Cheese</label><br>
+            <input type="radio" id="No Cheese" name="Cheese" value="No Cheese">
+            <label for="No Cheese">No Cheese</label><br>
+            <input type="radio" id="Extra Cheese" name="Cheese" value="Extra Cheese">
+            <label for="Extra Cheese">Extra Cheese ($3)</label>
+    
+        </fieldset>
+
+        <fieldset>
+            <legend>Payment</legend>
+            <input type="radio" id="Cash" name="Payment" value="Cash">
+            <label for="Cash">Cash</label>
+            <input type="radio" id="MasterCard" name="Payment" value="MasterCard">
+            <label for="MasterCard">MasterCard</label>
+            <input type="radio" id="Visa" name="Payment" value="Visa">
+            <label for="Visa">Visa</label>
+        </fieldset>
+        <button onclick ="gotoPage('Address')" type="button" value="Next">Next</button>
+    </div>
+    </form>
+    
+    <div id="Address" style="display:none;">
+    <form name="Location" >
+        <label for="Firstname">First Name: </label><br><br>
+        <input style="width:650px ;font-size:20pt; " type="text" id="Firstname" name="Firstname"  ><br><br>
+        <label for="LastName">Last Name: </label><br><br>
+        <input  style="width:650px ;font-size:20pt; " type="text" id="LastName" name="LastName" ><br><br>
+        <label for="E-mail">E-mail: </label><br><br>
+        <input style="width:650px ;font-size:20pt;" type="text" id="E-mail" name="E-mail"><br><br>
+        <label for="PhoneNumber">Phone Number: </label><br><br>
+        <input style="width:650px ;;font-size:20pt;"  type="text" id="PhoneNumber" name="PhoneNumber"><br><br>
+        <label for="City">City: </label><br><br>
+        <select name="City" id="City"> 
+            <option   value="none" selected disabled hidden>--Please choose an option--</option> 
+            <option ></option>
+            <option >Beirut</option> 
+            <option >Saida</option> 
+            <option >Sour</option> 
+            <option >Hadath</option>
+            <option >hareit Hreik</option>
+        </select><br><br>
+        <label  for="Address">Address: </label><br>
+        <textarea id="address" name="Address" rows="5" cols="93"></textarea><br><br>
+        <button onclick ="gotoPage('OrderSummary');fillSummary();CheckInfo();" type="button" value="Next">Next</button>
+        <button onclick="gotoPage('page1')" type="Back" value="Back">Back</button>
+    </form>
+
+</div>
+<div id="OrderSummary" style="display:none;">
+    <h1>Order Summary</h1>
+    <h2>Deliver to</h2>
+    <p id="dlvrTo"></p>
+    <h2>Order</h2>
+    <ul id="orderList"></ul>
+    <h2 id="total">Total:</h2>
+    <button onclick="gotoPage('Address')" type="Back" value="Back">Back</button>
+   </div>
+   
+</body>
+</html>
